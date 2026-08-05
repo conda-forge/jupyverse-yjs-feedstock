@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.1.2"
+  version: "0.1.3"
 
 package:
   name: jupyverse-yjs
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/j/jupyverse-yjs/jupyverse_yjs-${{ version }}.tar.gz
-    sha256: 0ff9db22384ee4d4d25682a352e6bb6b6518e20c4052a9878931844e8376399f
+    sha256: 7e0b063867d49d58368217403f41eccb3457dd03858dbfbaf660e0d7d769b9f0
 
 build:
   noarch: python
@@ -21,9 +21,10 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - uv-build
+    - uv-build >=0.11.32,<0.12
   run:
     - python >=${{ python_min }}
+    - fastapi-core
     - jupyverse-api >=0.15.0,<0.16.0
     - jupyverse-auth >=0.2.0,<0.3.0
     - pycrdt
